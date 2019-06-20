@@ -772,7 +772,7 @@ export default class RegionsPlugin {
             scrollDirection = null;
         };
         this.wrapper.addEventListener('mousedown', eventDown);
-        this.wrapper.addEventListener('touchstart', eventDown);
+        this.wrapper.addEventListener('touchstart', eventDown, { passive: true });
         this.on('disable-drag-selection', () => {
             this.wrapper.removeEventListener('touchstart', eventDown);
             this.wrapper.removeEventListener('mousedown', eventDown);
