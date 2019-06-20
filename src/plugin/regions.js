@@ -479,10 +479,10 @@ class Region {
                 };
 
                 this.element.addEventListener('mousedown', onDown);
-                this.element.addEventListener('touchstart', onDown);
+                this.element.addEventListener('touchstart', onDown, { passive: true });
 
                 this.wrapper.addEventListener('mousemove', onMove);
-                this.wrapper.addEventListener('touchmove', onMove);
+                this.wrapper.addEventListener('touchmove', onMove, { passive: true });
 
                 document.body.addEventListener('mouseup', onUp);
                 document.body.addEventListener('touchend', onUp);
@@ -772,7 +772,7 @@ export default class RegionsPlugin {
             scrollDirection = null;
         };
         this.wrapper.addEventListener('mousedown', eventDown);
-        this.wrapper.addEventListener('touchstart', eventDown);
+        this.wrapper.addEventListener('touchstart', eventDown, { passive: true });
         this.on('disable-drag-selection', () => {
             this.wrapper.removeEventListener('touchstart', eventDown);
             this.wrapper.removeEventListener('mousedown', eventDown);
@@ -853,7 +853,7 @@ export default class RegionsPlugin {
             }
         };
         this.wrapper.addEventListener('mousemove', eventMove);
-        this.wrapper.addEventListener('touchmove', eventMove);
+        this.wrapper.addEventListener('touchmove', eventMove, { passive: true });
         this.on('disable-drag-selection', () => {
             this.wrapper.removeEventListener('touchmove', eventMove);
             this.wrapper.removeEventListener('mousemove', eventMove);
