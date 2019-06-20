@@ -8,6 +8,7 @@
  */
 class Region {
     constructor(params, ws) {
+        console.log('CONSTRUCTOR');
         this.wavesurfer = ws;
         this.wrapper = ws.drawer.wrapper;
         this.util = ws.util;
