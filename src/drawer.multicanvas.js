@@ -520,6 +520,8 @@ export default class MultiCanvas extends Drawer {
      * @param {number} position X-offset of progress position in pixels
      */
     updateProgress(position) {
-        this.style(this.progressWave, { width: position + 'px' });
+        this.style(this.progressWave, {
+            transform: `translateX(${position + 'px'})`
+        });
     }
 }
